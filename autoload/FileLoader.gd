@@ -47,18 +47,18 @@ const VALID_IMAGE_EXTENSIONS: Array[String] = [
 
 func _ready():
 	# change the base folder path based on the build type
-	Logger.log_line("FileLoader: To enable external file loading in builds, download an export template and add the custom feature tag \"exported\" to the export. See https://docs.godotengine.org/en/stable/tutorials/export/feature_tags.html",Color.YELLOW, Logger.Severities.WARNING)
+	DebugLogger.log_line("FileLoader: To enable external file loading in builds, download an export template and add the custom feature tag \"exported\" to the export. See https://docs.godotengine.org/en/stable/tutorials/export/feature_tags.html",Color.YELLOW, DebugLogger.Severities.WARNING)
 	if !OS.has_feature("exported"):
 		# debug build uses project directory
 		_EXTERNAL_FILE_PREFIX = "res://"
-		Logger.log_line("Debug Base Directory: " + _EXTERNAL_FILE_PREFIX, Color.LIGHT_BLUE)
+		DebugLogger.log_line("Debug Base Directory: " + _EXTERNAL_FILE_PREFIX, Color.LIGHT_BLUE)
 	else:
 		# release build uses exe folder for user ease of access
 		_EXTERNAL_FILE_PREFIX = OS.get_executable_path().get_base_dir() + "/"
-		Logger.log_line("Build Base Directory: " + _EXTERNAL_FILE_PREFIX, Color.LIGHT_BLUE)
+		DebugLogger.log_line("Build Base Directory: " + _EXTERNAL_FILE_PREFIX, Color.LIGHT_BLUE)
 		
 	if not AUTOSAVING_ENABLED:
-		Logger.log_line("FileLoader: Autosaving disabled", Color.RED)
+		DebugLogger.log_line("FileLoader: Autosaving disabled", Color.RED)
 
 func _get_modified_filepath(partial_filepath: String) -> String:
 	# given a partial filepath, return the full one, which will change based on the build
@@ -361,7 +361,7 @@ func save_game(file_dir: String = SAVE_DIR_PATH, file_name: String = SAVE_FILE_N
 ## Takes json file and converts is back into player data
 func load_game(file_dir: String = SAVE_DIR_PATH, file_name: String = SAVE_FILE_NAME) -> void:
 	if not has_save_file():
-		Logger.log_error("No save file found")
+		DebugLogger.log_error("No save file found")
 	else:
 		# load from json
 		var player_data: PlayerData = PlayerData.new()

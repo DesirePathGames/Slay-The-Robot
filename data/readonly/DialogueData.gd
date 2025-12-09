@@ -13,7 +13,7 @@ class_name DialogueData
 ## Gets embedded DialogueOption belonging to this Dialogue.
 func get_dialogue_option(dialogue_option_object_id: String) -> DialogueOptionData:
 	if not dialogue_option_id_to_dialogue_options.has(dialogue_option_object_id):
-		Logger.log_error("No DialogueOptionData with ID {0} found in Dialogue {1}".format([dialogue_option_object_id, object_id]))
+		DebugLogger.log_error("No DialogueOptionData with ID {0} found in Dialogue {1}".format([dialogue_option_object_id, object_id]))
 		return null
 	else:
 		return dialogue_option_id_to_dialogue_options[dialogue_option_object_id]
@@ -21,7 +21,7 @@ func get_dialogue_option(dialogue_option_object_id: String) -> DialogueOptionDat
 ## Gets embedded DialogueState belonging to this Dialogue.
 func get_dialogue_state(dialogue_state_object_id: String) -> DialogueStateData:
 	if not dialogue_state_id_to_dialogue_states.has(dialogue_state_object_id):
-		Logger.log_error("No DialogueStateData with ID {0} found in Dialogue {1}".format([dialogue_state_object_id, object_id]))
+		DebugLogger.log_error("No DialogueStateData with ID {0} found in Dialogue {1}".format([dialogue_state_object_id, object_id]))
 		return null
 	else:
 		return dialogue_state_id_to_dialogue_states[dialogue_state_object_id]

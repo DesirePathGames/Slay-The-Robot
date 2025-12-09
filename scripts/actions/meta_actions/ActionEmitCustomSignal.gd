@@ -10,7 +10,7 @@ func perform_action():
 	for action_interceptor_processor in action_interceptor_processors:
 		var custom_signal_object_id: String = action_interceptor_processor.get_shadowed_action_values("custom_signal_object_id", "")
 		if custom_signal_object_id == "":
-			Logger.log_error("No signal object id defined")
+			DebugLogger.log_error("No signal object id defined")
 		else:
 			# get the intercepted action value you'd like to attach to the signal
 			var custom_signal_value: int = action_interceptor_processor.get_shadowed_action_values("custom_signal_value", 0)

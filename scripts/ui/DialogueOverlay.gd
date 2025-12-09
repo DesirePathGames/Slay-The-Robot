@@ -25,18 +25,18 @@ func start_dialogue() -> void:
 	
 	var event_data: EventData = Global.get_player_event_data()
 	if event_data == null:
-		Logger.log_error("No Dialogue Event found")
+		DebugLogger.log_error("No Dialogue Event found")
 		end_dialogue()
 		return
 	
 	if event_data.event_dialogue_object_id == "":
-		Logger.log_error("No DialogueData specified for " + str(event_data.object_id))
+		DebugLogger.log_error("No DialogueData specified for " + str(event_data.object_id))
 		end_dialogue()
 		return
 	
 	current_dialogue_data = Global.get_dialogue_data(event_data.event_dialogue_object_id)
 	if current_dialogue_data == null:
-		Logger.log_error("No DialogueData specified for " + str())
+		DebugLogger.log_error("No DialogueData specified for " + str())
 		end_dialogue()
 		return
 	

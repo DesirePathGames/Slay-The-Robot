@@ -25,7 +25,7 @@ Random="*res://autoload/Random.gd"
 Global="*res://autoload/Global.gd"
 ActionHandler="*res://autoload/ActionHandler.gd"
 ActionGenerator="*res://autoload/ActionGenerator.gd"
-Logger="*res://autoload/Logger.gd"
+DebugLogger="*res://autoload/DebugLogger.gd"
 UIDGenerator="*res://autoload/UIDGenerator.gd"
 
 [debug]

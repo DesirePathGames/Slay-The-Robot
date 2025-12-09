@@ -242,7 +242,7 @@ func get_next_event_object_id_from_pool(event_pool_object_id: String) -> String:
 	# populate the event pool if it doesn't exist or is empty
 	if len(event_pool_event_object_ids) == 0:
 		var message: String = "Event Pool Empty; Populating {0}...".format([event_pool_object_id])
-		Logger.log_line(message, Color.YELLOW)
+		DebugLogger.log_line(message, Color.YELLOW)
 		# copy event ids from corresponding event pool
 		for event_object_id: String in event_pool_data.event_pool_event_object_ids:
 			if not event_pool_event_object_ids.has(event_object_id):
@@ -254,7 +254,7 @@ func get_next_event_object_id_from_pool(event_pool_object_id: String) -> String:
 		player_event_pools[event_pool_object_id] = event_pool_event_object_ids
 		
 		message = "Event Pool Repopulated: {0}".format([str(event_pool_event_object_ids)])
-		Logger.log_line(message, Color.WEB_GREEN)
+		DebugLogger.log_line(message, Color.WEB_GREEN)
 	
 	# find the first event that passes validators and store events that don't pass
 	var failed_event_object_ids: Array[String] = [] # events that fail their validators and must be handled
@@ -301,7 +301,7 @@ func get_next_event_object_id_from_pool(event_pool_object_id: String) -> String:
 	
 	# display the event
 	var message: String = "Event Pool: {0} popped from {1}".format([next_event_object_id, event_pool_object_id])
-	Logger.log_line(message)
+	DebugLogger.log_line(message)
 	
 	return next_event_object_id
 
@@ -438,7 +438,7 @@ func get_next_artifacts_from_pool(artifact_count: int, artifact_rarities: Array[
 	# pops standard artifacts from the artifact pool and returns them
 	var returned_artifact_ids: Array[String] = []
 	if len(artifact_rarities) == 0:
-		Logger.log_warning("PlayerData.get_next_artifacts_from_pool() called with empty rarities")
+		DebugLogger.log_warning("PlayerData.get_next_artifacts_from_pool() called with empty rarities")
 		return []
 	
 	var artifact_pool: Array[String] = player_artifact_pool.duplicate()

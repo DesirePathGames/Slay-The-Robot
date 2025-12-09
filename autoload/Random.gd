@@ -167,7 +167,7 @@ func generate_rarity_weighted_card_draft(rng: RandomNumberGenerator, number_of_c
 					selected_card_id = ""
 			
 			if selected_card_id == "":
-				Logger.log_warning("Random.generate_rarity_weighted_card_draft(): Insufficient cards IDs in rarity bucket {0} for drafting".format([selected_card_rarity]))
+				DebugLogger.log_warning("Random.generate_rarity_weighted_card_draft(): Insufficient cards IDs in rarity bucket {0} for drafting".format([selected_card_rarity]))
 			else:
 				card_ids_in_draft.append(selected_card_id)
 			
@@ -307,7 +307,7 @@ func get_shop_artifact_prices(artifact_object_ids: Array[String], rng: RandomNum
 	for artifact_object_id: String in artifact_object_ids:
 		var artifact_data: ArtifactData = Global.get_artifact_data(artifact_object_id)
 		if artifact_data == null:
-			Logger.log_error("No ArtifactData of ID {0} found".format([artifact_object_id]))
+			DebugLogger.log_error("No ArtifactData of ID {0} found".format([artifact_object_id]))
 			breakpoint
 		else:
 			var artifact_price_range_values: Array = ShopData.ARTIFACT_RARITY_TO_PRICE_RANGE.get(artifact_data.artifact_rarity, [0,1])
@@ -322,7 +322,7 @@ func get_shop_consumable_prices(consumable_object_ids: Array[String], rng: Rando
 	for consumable_object_id: String in consumable_object_ids:
 		var consumable_data: ConsumableData = Global.get_consumable_data(consumable_object_id)
 		if consumable_data == null:
-			Logger.log_error("No consumableData of ID {0} found".format([consumable_object_id]))
+			DebugLogger.log_error("No consumableData of ID {0} found".format([consumable_object_id]))
 			breakpoint
 		else:
 			var consumable_price_range_values: Array = ShopData.CONSUMABLE_RARITY_TO_PRICE_RANGE.get(consumable_data.consumable_rarity, [0,1])

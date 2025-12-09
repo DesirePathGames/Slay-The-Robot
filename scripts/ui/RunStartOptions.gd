@@ -46,7 +46,7 @@ func populate_run_start_options() -> void:
 		var upside_option_id: String = upside_option_ids.pop_back()
 		var downside_option_id: String = downside_option_ids.pop_back()
 		
-		Logger.log_line("Run options: " + upside_option_id + " " + downside_option_id)
+		DebugLogger.log_line("Run options: " + upside_option_id + " " + downside_option_id)
 		
 		var upside_run_start_option_data: RunStartOptionData = Global.get_run_start_option_data(upside_option_id)
 		var downside_run_start_option_data: RunStartOptionData = Global.get_run_start_option_data(downside_option_id)
