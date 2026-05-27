@@ -101,6 +101,8 @@ func perform_action() -> void:
 				location.location_act = act_number
 				location.location_index = Vector2(i, k)
 				location_position = BOTTOM_LEFT + (Vector2(i, -k) * GRID_SPACING)
+				var random_x_offset = rng_world_generation.randf_range(-30.0, 30.0)
+				location_position.x += random_x_offset
 				location.location_position = location_position
 				location.location_floor = floor_counter
 				
