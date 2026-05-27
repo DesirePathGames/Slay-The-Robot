@@ -1,0 +1,28 @@
+{
+	"patch_data": {
+
+	},
+	"properties": {
+		"mod_author": "Me",
+		"mod_dependency_mod_ids": [],
+		"mod_description": "Map overhaul mod",
+		"mod_folder_to_load_data": {
+		},
+		"mod_game_version": {
+			"major": 0,
+			"minor": 0,
+			"patch": 0
+		},
+		"mod_name": "",
+		"mod_version": {
+			"major": 0,
+			"minor": 0,
+			"patch": 0
+		},
+		"mod_script_file_paths": {
+			"external/mods/my_map_mod/scripts/Map.gd": "res://scripts/ui/Map.gd",
+			"external/mods/my_map_mod/scripts/MapLocation.gd": "res://scripts/ui/MapLocation.gd"
+		},
+		"object_id": "mod_data_my_map_mod"
+	}
+}
