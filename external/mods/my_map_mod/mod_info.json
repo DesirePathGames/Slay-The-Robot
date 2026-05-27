@@ -21,7 +21,8 @@
 		},
 		"mod_script_file_paths": {
 			"external/mods/my_map_mod/scripts/Map.gd": "res://scripts/ui/Map.gd",
-			"external/mods/my_map_mod/scripts/MapLocation.gd": "res://scripts/ui/MapLocation.gd"
+			"external/mods/my_map_mod/scripts/MapLocation.gd": "res://scripts/ui/MapLocation.gd",
+			"external/mods/my_map_mod/scripts/MainMenu.gd": "res://scripts/ui/menus/MainMenu.gd"
 		},
 		"object_id": "mod_data_my_map_mod"
 	}
