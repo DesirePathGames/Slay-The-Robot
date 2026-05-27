@@ -11,10 +11,6 @@
 			"external/mods/example_mod/": {
 				"enabled": false,
 				"load_priority": 1
-			},
-			"external/mods/my_map_mod/": {
-				"enabled": true,
-				"load_priority": 2
 			}
 		},
 		"object_id": "mod_list"

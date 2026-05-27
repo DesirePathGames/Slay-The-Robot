@@ -12,6 +12,20 @@ var can_travel: bool = false	# if clicking on a location brings you to the next 
 const MAP_Y_MARGIN: float = 150
 
 func _ready():
+	if has_node("Background"):
+		$Background.visible = false
+	if has_node("Background2"):
+		$Background2.visible = false
+
+	var texture_rect = TextureRect.new()
+	var texture = FileLoader.load_texture("external/mods/my_map_mod/sprites/background.png")
+	if texture:
+		texture_rect.texture = texture
+		texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		texture_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		add_child(texture_rect)
+		move_child(texture_rect, 0)
+
 	map_button.button_up.connect(_on_map_button_up)
 	back_button.button_up.connect(_on_back_button_up)
 	
