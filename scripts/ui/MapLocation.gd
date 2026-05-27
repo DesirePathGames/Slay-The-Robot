@@ -20,14 +20,13 @@ func init(_location_data: LocationData):
 	else:
 		map_label.text = LocationData.LOCATION_TYPES.keys()[location_data.location_type]
 
-	if location_data.location_type == LocationData.LOCATION_TYPES.COMBAT:
-		var tex = FileLoader.load_texture("external/mods/my_map_mod/sprites/star.png")
-		if tex:
-			texture_normal = tex
-			ignore_texture_size = true
-			stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-			custom_minimum_size = Vector2(64, 64)
-			size = Vector2(64, 64)
+	var tex = FileLoader.load_texture("external/mods/my_map_mod/sprites/star.png")
+	if tex:
+		texture_normal = tex
+		ignore_texture_size = true
+		stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		custom_minimum_size = Vector2(64, 64)
+		size = Vector2(64, 64)
 
 func flash_location() -> void:
 	animation_player.play("flash_map_location")

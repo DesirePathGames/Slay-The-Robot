@@ -29,12 +29,13 @@ func perform_action() -> void:
 		var location_non_combat_event_rate: float = action_interceptor_processor.get_shadowed_action_values("location_non_combat_event_rate", 0.3) # how often locations will be a non combat event
 		
 		var generate_start_node: bool = act_number == 1
-		const MIDDLE: int = 400
-		const GRID_SPACING: int = 100	# distance between locations
-		var BOTTOM: int = (floors_per_act + 1) * GRID_SPACING
+		const MIDDLE: int = 600
+		const GRID_SPACING_X: int = 220
+		const GRID_SPACING_Y: int = 100
+		var BOTTOM: int = (floors_per_act + 1) * GRID_SPACING_Y
 		
 		var MIDDLE_INDEX: int = (locations_per_floor - 1) / 2
-		var BOTTOM_LEFT: Vector2 = Vector2(MIDDLE - (GRID_SPACING * MIDDLE_INDEX), BOTTOM)
+		var BOTTOM_LEFT: Vector2 = Vector2(MIDDLE - (GRID_SPACING_X * MIDDLE_INDEX), BOTTOM)
 		
 		### vars used for generation
 		var location_position: Vector2 = BOTTOM_LEFT # current position in grid
