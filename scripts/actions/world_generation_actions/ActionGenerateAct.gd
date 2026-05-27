@@ -61,7 +61,7 @@ func perform_action() -> void:
 			# positioning and act
 			starting_location.location_act = 1
 			starting_location.location_index = Vector2(MIDDLE_INDEX, -1)
-			starting_location.location_position = BOTTOM_LEFT + (starting_location.location_index * GRID_SPACING)
+			starting_location.location_position = Vector2(MIDDLE, BOTTOM + GRID_SPACING_Y)
 			starting_location.location_floor = floor_counter
 			# assign a type
 			starting_location.location_type = LocationData.LOCATION_TYPES.STARTING
@@ -101,8 +101,8 @@ func perform_action() -> void:
 				# positioning and act
 				location.location_act = act_number
 				location.location_index = Vector2(i, k)
-				location_position = BOTTOM_LEFT + (Vector2(i, -k) * GRID_SPACING)
-				var random_x_offset = rng_world_generation.randf_range(-30.0, 30.0)
+				location_position = BOTTOM_LEFT + Vector2(i * GRID_SPACING_X, -k * GRID_SPACING_Y)
+				var random_x_offset = rng_world_generation.randf_range(-60.0, 60.0)
 				location_position.x += random_x_offset
 				location.location_position = location_position
 				location.location_floor = floor_counter
@@ -180,7 +180,7 @@ func perform_action() -> void:
 		# positioning and act
 		boss_location.location_act = act_number
 		boss_location.location_index = Vector2(MIDDLE_INDEX, floors_per_act)
-		location_position = BOTTOM_LEFT + (Vector2(MIDDLE_INDEX, -floors_per_act) * GRID_SPACING)
+		location_position = Vector2(MIDDLE, BOTTOM - (floors_per_act * GRID_SPACING_Y))
 		boss_location.location_position = location_position
 		boss_location.location_floor = floor_counter
 		# assign a type
