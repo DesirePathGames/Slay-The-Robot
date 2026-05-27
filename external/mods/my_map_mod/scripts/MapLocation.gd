@@ -1,5 +1,4 @@
 extends TextureButton
-class_name MapLocation
 
 var location_data: LocationData = null
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
