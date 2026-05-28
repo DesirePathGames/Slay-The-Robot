@@ -1541,9 +1541,9 @@ text = "<----"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="RunScreen/Map"]
 layout_mode = 0
-offset_left = 152.0
+offset_left = 0.0
 offset_top = 72.0
-offset_right = 1040.0
+offset_right = 1200.0
 offset_bottom = 656.0
 follow_focus = true
 horizontal_scroll_mode = 3

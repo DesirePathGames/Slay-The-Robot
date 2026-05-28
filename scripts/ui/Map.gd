@@ -71,6 +71,7 @@ func populate_locations(locations: Array[LocationData] = Global.get_all_act_loca
 	# set the size of the container to make scrolling posible
 	location_container.custom_minimum_size.y = max_y + MAP_Y_MARGIN
 	location_container.size.y = max_y + MAP_Y_MARGIN
+	location_container.custom_minimum_size.x = 1200
 	
 	# wait a frame to ensure container is properly resized
 	await Global.get_tree().process_frame
