@@ -133,7 +133,7 @@ func get_total_stat(stat_name: String) -> int:
 
 ## Gets a given stat across the current turn. Can include custom stats.
 func get_turn_stat(stat_name: String) -> int:
-	return total_stats.get(stat_name, 0)
+	return turn_stats.get(stat_name, 0)
 
 ## Gets a turn combat stat from a hardcoded STATS enum value.
 func get_turn_enum_stat(stat_enum: int) -> int:

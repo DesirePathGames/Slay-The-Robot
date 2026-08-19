@@ -363,7 +363,9 @@ func get_combat_total_stat(stat_name: String) -> int:
 		return current_combat_stats.get_total_stat(stat_name)
 
 func get_combat_turn_stat(stat_name: String) -> int:
-	return current_run_stats.get_run_total_stat(stat_name)
+	if current_combat_stats != null:
+		return current_combat_stats.get_turn_stat(stat_name)
+	return 0
 
 func _reset_turn_stats() -> void:
 	if current_combat_stats != null:
