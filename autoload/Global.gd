@@ -255,7 +255,7 @@ func start_run(character_object_id: String, run_seed: int, difficulty_level: int
 	# difficulty run modifiers
 	if difficulty_level > 0:
 		var difficulty_amount_max: int = min(difficulty_level, len(STANDARD_DIFFICULTY_RUN_MODIFIER_IDS))
-		player_data.player_run_modifier_object_ids = STANDARD_DIFFICULTY_RUN_MODIFIER_IDS.slice(0, difficulty_amount_max, 1, true)
+		player_data.player_run_modifier_object_ids += STANDARD_DIFFICULTY_RUN_MODIFIER_IDS.slice(0, difficulty_amount_max, 1, true)
 	player_data.player_run_modifier_object_ids += custom_run_modifier_object_ids
 	#endregion
 	
