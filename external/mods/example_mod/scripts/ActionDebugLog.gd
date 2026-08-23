@@ -2,7 +2,7 @@
 extends BaseAction
 
 func perform_action():
-	Logger.log_line("Mod loading successful. ActionDebugLog.gd script was overwritten")
+	DebugLogger.log_line("Mod loading successful. ActionDebugLog.gd script was overwritten")
 
 func is_instant_action() -> bool:
 	return true

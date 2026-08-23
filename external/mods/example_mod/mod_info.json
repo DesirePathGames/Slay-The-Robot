@@ -5,7 +5,7 @@
 	"properties": {
 		"mod_author": "Desire Path Games",
 		"mod_dependency_mod_ids": [],
-		"mod_description": "An example mod that adds a new card and assigns it to the starting player's cards, and takes over the debug logging action script.",
+		"mod_description": "An example mod that adds a new card (see card_modded_card.json), assigns it to the starting player's cards (using a patch of character_red.json), and overwrites the debug logging action script.",
 		"mod_folder_to_load_data": {
 			"external/mods/example_mod/cards/": {
 				"class_name": "CardData",
