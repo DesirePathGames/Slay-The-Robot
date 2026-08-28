@@ -3,7 +3,7 @@
 ## is false and positions are defined.
 extends BaseAction
 
-func perform_action():
+func perform_action() -> void:
 	var action_interceptor_processors: Array[ActionInterceptorProcessor] = _intercept_action()
 	
 	for action_interceptor_processor in action_interceptor_processors:
@@ -21,7 +21,7 @@ func perform_action():
 		# get all enemies and map them to their slot
 		var enemies: Array[Enemy] = []
 		enemies.assign(Global.get_tree().get_nodes_in_group("enemies_alive_or_dead"))
-		var populated_enemy_slots: Dictionary = {}
+		var populated_enemy_slots: Dictionary[int, Enemy] = {}
 		for enemy in enemies:
 			if populated_enemy_slots.has(enemy.enemy_slot):
 				DebugLogger.log_error("ActionSummonEnemies: Multiple enemies in slot {0}".format([enemy.enemy_slot]))
@@ -29,7 +29,6 @@ func perform_action():
 				populated_enemy_slots[enemy.enemy_slot] = enemy
 
 		# spawn enemies
-		var player_location_data: LocationData = Global.get_player_location_data()
 		var remaining_spawns: int = number_of_spawns
 		
 		for slot_id in spawn_slots:
@@ -53,5 +52,5 @@ func perform_action():
 			Signals.enemy_spawn_requested.emit(enemy_object_id, slot_id)
 			remaining_spawns -= 1
 		
-func _to_string():
+func _to_string() -> String:
 	return "Summon Enemy Action"
