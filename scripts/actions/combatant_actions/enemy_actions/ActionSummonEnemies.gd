@@ -26,7 +26,7 @@ func perform_action():
 			if populated_enemy_slots.has(enemy.enemy_slot):
 				DebugLogger.log_error("ActionSummonEnemies: Multiple enemies in slot {0}".format([enemy.enemy_slot]))
 			else:
-				populated_enemy_slots[enemy.enemy_slot] = enemy.enemy_slot
+				populated_enemy_slots[enemy.enemy_slot] = enemy
 
 		# spawn enemies
 		var player_location_data: LocationData = Global.get_player_location_data()
